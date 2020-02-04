@@ -89,23 +89,22 @@
     "Bullet",
     "Ui"
   ],
-  "simulator-orientation": false,
+  "simulator-orientation": true,
   "simulator-resolution": {
     "height": 640,
     "width": 960
   },
-  "use-customize-simulator": false,
-  "use-project-simulator-setting": false,
-  "start-scene": "current",
+  "use-customize-simulator": true,
+  "use-project-simulator-setting": true,
   "last-module-event-record-time": 0,
   "assets-sort-type": "name",
   "facebook": {
-    "enable": false,
     "appID": "",
-    "live": {
+    "audience": {
       "enable": false
     },
-    "audience": {
+    "enable": false,
+    "live": {
       "enable": false
     }
   }
