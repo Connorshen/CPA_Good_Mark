@@ -12,11 +12,13 @@ cc.Class({
 
     // use this for initialization
     onLoad: function () {
-        this.label.string = this.text;
+        var day1 = new Date();
+        this.label.string = this.text+day1.getSeconds();
     },
 
     // called every frame
     update: function (dt) {
-
+        var day1 = new Date();
+        this.label.string = this.text+day1.getSeconds();
     },
 });
