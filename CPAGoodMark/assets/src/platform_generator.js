@@ -12,21 +12,12 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        // foo: {
-        //     // ATTRIBUTES:
-        //     default: null,        // The default value will be used only when the component attaching
-        //                           // to a node for the first time
-        //     type: cc.SpriteFrame, // optional, default is typeof default
-        //     serializable: true,   // optional, default is true
-        // },
-        // bar: {
-        //     get () {
-        //         return this._bar;
-        //     },
-        //     set (value) {
-        //         this._bar = value;
-        //     }
-        // },
+        platform_list:[],
+        move_speed:0.1,
+        platform_prafab: [cc.Prefab],
+        platform_layer: cc.Node,
+        gold_group_list: [cc.Prefab],
+        maxMoveSpeed:8, //平台最大移动速度
     },
 
     // LIFE-CYCLE CALLBACKS:

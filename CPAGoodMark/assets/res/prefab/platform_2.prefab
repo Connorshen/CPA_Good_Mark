@@ -44,15 +44,15 @@
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
-      "x": 0.5,
-      "y": 0.5
+      "x": 0,
+      "y": 0
     },
     "_trs": {
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        207.392,
-        -90.734,
+        338.976,
+        239.543,
         0,
         0,
         0,
@@ -121,8 +121,8 @@
     "tag": 0,
     "_offset": {
       "__type__": "cc.Vec2",
-      "x": 0,
-      "y": 0
+      "x": 392,
+      "y": 36
     },
     "_size": {
       "__type__": "cc.Size",
@@ -139,7 +139,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "47fZqen81DOIuw02eyzFnx",
+    "fileId": "48clVofqVLhZ169uEJ09Tv",
     "sync": false
   }
 ]
