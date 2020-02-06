@@ -46,7 +46,7 @@ cc.Class({
      */
     checkBgReset:function(bgList)
     {
-        var winSize = cc.director.getWinSize();
+        var winSize = cc.winSize;
         var first_xMax = bgList[0].getBoundingBox().xMax;
         if (first_xMax <= 0) 
         {
