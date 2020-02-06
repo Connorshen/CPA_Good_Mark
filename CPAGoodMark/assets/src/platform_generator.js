@@ -108,7 +108,7 @@ cc.Class({
             return;
         }
 
-        var winSize = cc.director.getWinSize();
+        var winSize = cc.winSize;
         var last_platform_bounding_box = platform.getBoundingBox();
         var right_x = last_platform_bounding_box.x + last_platform_bounding_box.width;
 
