@@ -21,7 +21,7 @@ cc.Class({
 
     onLoad: function () {
         this.fixBgPos(this.far_bg[0], this.far_bg[1]);
-        //this.fixBgPos(this.near_bg[0], this.near_bg[1]);
+        this.fixBgPos(this.near_bg[0], this.near_bg[1]);
     },
 
     fixBgPos: function (bg1, bg2) {
@@ -31,7 +31,10 @@ cc.Class({
     },
     update: function (dt) {
         this.bgMove(this.far_bg, this.far_speed);
-        //this.bgMove(this.near_bg, this.near_speed);
+        this.bgMove(this.near_bg, this.near_speed);
+
+        this.checkBgReset(this.far_bg);
+        this.checkBgReset(this.near_bg);
     },
     bgMove: function (bgList, speed) {
         for (var index = 0; index < bgList.length; index++) {
@@ -39,4 +42,18 @@ cc.Class({
             element.x -= speed;
         }
     },
+    /***
+     * 检查背景是否要重置位置
+     */
+    checkBgReset: function (bgList) {
+        var winSize = cc.director.getWinSize();
+        var first_xMax = bgList[0].getBoundingBox().xMax;
+        if (first_xMax <= 0) {
+            var preFirstBg = bgList.shift();
+            bgList.push(preFirstBg);
+
+            var curFirstBg = bgList[0];
+            preFirstBg.x = curFirstBg.getBoundingBox().xMax;
+        }
+    }
 });
