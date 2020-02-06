@@ -1222,7 +1222,7 @@
       "__id__": 26
     },
     "_enabled": true,
-    "platform_generator": {
+    "platform_generator_node": {
       "__id__": 15
     },
     "platform_default_0": {
