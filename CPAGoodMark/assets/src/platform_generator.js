@@ -58,7 +58,7 @@ cc.Class({
         platform_temp.addChild(gold_group);
         // }
 
-        cc.log("产出一个平台,平台数=", this.platform_list.length);
+        cc.log("产出一个新平台,平台类型=", random_num, "，总平台数=", this.platform_list.length);
     },
 
     update: function (dt) {
