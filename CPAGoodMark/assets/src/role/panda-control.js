@@ -50,17 +50,17 @@ cc.Class({
 
     onKeyPressed: function (keyCode, event) {
         switch (keyCode) {
-            case cc.KEY.d:
+            case cc.macro.KEY.d:
                 this.direction = 1;
 
                 if (!this.jumping) this.player.play("run");    
                 break;
-            case cc.KEY.a:
+            case cc.macro.KEY.a:
                 this.direction = -1;
                 if (!this.jumping) this.player.play("run");   
 
                 break;
-            case cc.KEY.j:
+            case cc.macro.KEY.j:
                 if (!this.jumping || this.jumpCount < 2) {
                     this.jumping = true;
                     this.speed.y = this.jumpSpeed;
@@ -74,12 +74,12 @@ cc.Class({
 
     onKeyReleased: function (keyCode, event) {
          switch (keyCode) {
-            case cc.KEY.d:
+            case cc.macro.KEY.d:
                 if (this.direction == 1) {
                     this.direction = 0;
                 }
                 break;
-            case cc.KEY.a:
+            case cc.macro.KEY.a:
                 if (this.direction == -1) {
                     this.direction = 0;
                 }
