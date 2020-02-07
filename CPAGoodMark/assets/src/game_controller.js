@@ -20,8 +20,9 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     onLoad: function () {
-        var platform_generator = this.platform_generator_node.getComponent("platform_generator");
-        platform_generator.initPlatforms([this.platform_default_0, this.platform_default_1]);
+        var platform_generator_node = cc.find("platform_generator")
+        this.platform_generator = platform_generator_node.getComponent("platform_generator");
+        this.platform_generator.initPlatforms([this.platform_default_0, this.platform_default_1]);
     },
 
 
