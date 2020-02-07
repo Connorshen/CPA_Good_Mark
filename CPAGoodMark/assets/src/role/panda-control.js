@@ -3,7 +3,7 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        speed:cc.v2(0, 0),
+        speed: cc.v2(0, 0),
         addSpeed: 600,
         maxSpeed: cc.v2(10, 1000),
         gravity: -1000,
@@ -14,33 +14,64 @@ cc.Class({
         jumping: false,
         jumpCount: 0, //跳跃次数
         drag: 1000,
-        prePosition:cc.v2(0,0), //上一帧的坐标
+        prePosition: cc.v2(0, 0), //上一帧的坐标
         player: null, // 动画播放器
 
         // //外部组件
         uiLayer: cc.Node,
         uiLayerComonent: null,
+        leftBtn: { default: null, type: cc.Button },
+        rightBtn: { default: null, type: cc.Button },
+        upBtn: { default: null, type: cc.Button },
     },
 
     // use this for initialization
     onLoad: function () {
-       this.prePosition.x = this.node.x;
-       this.prePosition.y = this.node.y;
+        this.prePosition.x = this.node.x;
+        this.prePosition.y = this.node.y;
 
-       var manager = cc.director.getCollisionManager();
-       manager.enabled = true;
-    //    manager.enabledDebugDraw = true;
+        var manager = cc.director.getCollisionManager();
+        manager.enabled = true;
+        //    manager.enabledDebugDraw = true;
 
         this.player = this.node.getComponent(cc.Animation);
 
         //UI组件
         this.uiLayerComonent = this.uiLayer.getComponent("uiLayer");
 
-       cc.eventManager.addListener({
+        cc.eventManager.addListener({
             event: cc.EventListener.KEYBOARD,
             onKeyPressed: this.onKeyPressed.bind(this),
             onKeyReleased: this.onKeyReleased.bind(this)
         }, this.node);
+        var self = this;
+        self.leftBtn.node.on(cc.Node.EventType.TOUCH_START, function (event) {
+            self.direction = -1;
+            if (!self.jumping) self.player.play("run");
+        });
+        self.rightBtn.node.on(cc.Node.EventType.TOUCH_START, function (event) {
+            self.direction = 1;
+            if (!self.jumping) self.player.play("run");
+        });
+        self.leftBtn.node.on(cc.Node.EventType.TOUCH_END, function (event) {
+            if (self.direction == -1) {
+                self.direction = 0;
+            }
+        });
+        self.rightBtn.node.on(cc.Node.EventType.TOUCH_END, function (event) {
+            if (self.direction == 1) {
+                self.direction = 0;
+            }
+        });
+        self.upBtn.node.on(cc.Node.EventType.TOUCH_START, function (event) {
+            if (!self.jumping || self.jumpCount < 2) {
+                self.jumping = true;
+                self.speed.y = self.jumpSpeed;
+
+                self.jumpCount++;
+                self.jumpCount < 2 ? self.player.play("jump") : self.player.play("twiceJump");
+            }
+        });
     },
 
     onDestroy: function onDisabled() {
@@ -53,11 +84,11 @@ cc.Class({
             case cc.macro.KEY.d:
                 this.direction = 1;
 
-                if (!this.jumping) this.player.play("run");    
+                if (!this.jumping) this.player.play("run");
                 break;
             case cc.macro.KEY.a:
                 this.direction = -1;
-                if (!this.jumping) this.player.play("run");   
+                if (!this.jumping) this.player.play("run");
 
                 break;
             case cc.macro.KEY.j:
@@ -73,7 +104,7 @@ cc.Class({
     },
 
     onKeyReleased: function (keyCode, event) {
-         switch (keyCode) {
+        switch (keyCode) {
             case cc.macro.KEY.d:
                 if (this.direction == 1) {
                     this.direction = 0;
@@ -84,7 +115,7 @@ cc.Class({
                     this.direction = 0;
                 }
                 break;
-         }
+        }
     },
 
     collisionGoldEnter: function (other, self) {
@@ -92,7 +123,7 @@ cc.Class({
 
         this.uiLayerComonent.addGold();
     },
-    
+
 
     collisionPlatformEnter: function (other, self) {
         var selfAabb = self.world.aabb.clone();
@@ -139,12 +170,12 @@ cc.Class({
         console.log('on collision enter');
         cc.log("coll tag = " + other.tag);
 
-       if (other.tag == 1) {
-           this.collisionGoldEnter(other, self);
-       }
-       else{
-           this.collisionPlatformEnter(other, self);
-       }
+        if (other.tag == 1) {
+            this.collisionGoldEnter(other, self);
+        }
+        else {
+            this.collisionPlatformEnter(other, self);
+        }
     },
 
     onCollisionStay: function (other, self) {
@@ -161,7 +192,7 @@ cc.Class({
             this.node.x += offset.x;
         }
     },
-    
+
     /**
      * 当碰撞结束后调用
      * @param  {Collider} other 产生碰撞的另一个碰撞组件
@@ -170,27 +201,26 @@ cc.Class({
     onCollisionExit: function (other, self) {
         console.log('on collision exit');
         if (other.tag != 0) return;
-        
+
         this.collisionX = 0;
         this.collisionY = 0;
         this.jumping = true;
         this.jumpCount = 1;
         this.player.play("jump");
     },
-    
+
     // called every frame, uncomment this function to activate update callback
     update: function (dt) {
         /**
          * Y轴变化
-         *  */ 
+         *  */
         if (this.collisionY === 0) //没任何碰撞，计算重力
         {
             this.speed.y += this.gravity * dt;
-            if (Math.abs(this.speed.y) > this.maxSpeed.y) 
-            {
+            if (Math.abs(this.speed.y) > this.maxSpeed.y) {
                 this.speed.y = this.speed.y > 0 ? this.maxSpeed.y : -this.maxSpeed.y;
             }
-        } 
+        }
 
         if (this.direction === 0) {
             //停下的时候，计算摩擦力 
