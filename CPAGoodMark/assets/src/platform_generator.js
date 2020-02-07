@@ -89,7 +89,6 @@ cc.Class({
         var right_x = last_platform_bounding_box.x + last_platform_bounding_box.width;
 
         if (right_x < winSize.width * 0.8) {
-            cc.log(right_x, winSize.width * 0.8);
             this.generate(platform)
         }
 
