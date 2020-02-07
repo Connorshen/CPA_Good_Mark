@@ -140,7 +140,7 @@
       "__id__": 1
     },
     "_enabled": true,
-    "tag": 0,
+    "tag": 1,
     "_offset": {
       "__type__": "cc.Vec2",
       "x": 0,
@@ -159,9 +159,9 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "a0a549e1-ab7d-4997-8754-320b66b3078c"
     },
-    "fileId": "678F9dBBtH/pFLUhvx2Wi9",
+    "fileId": "8afr+n5N9DvIvkdaUDYRLH",
     "sync": false
   }
 ]
