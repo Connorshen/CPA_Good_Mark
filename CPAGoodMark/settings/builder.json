@@ -9,5 +9,35 @@
   "packageName": "org.cocos2d.panda-run",
   "startScene": "3bb62552-fe87-4801-8618-aca86e194633",
   "title": "panda-run",
-  "webOrientation": "auto"
+  "webOrientation": "auto",
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "mergeStartScene": false,
+  "optimizeHotUpdate": false,
+  "md5Cache": false,
+  "encryptJs": true,
+  "xxteaKey": "32989e22-c4fe-40",
+  "zipCompressJs": true,
+  "fb-instant-games": {},
+  "android": {
+    "packageName": "org.cocos2d.panda-run"
+  },
+  "ios": {
+    "packageName": "org.cocos2d.panda-run"
+  },
+  "mac": {
+    "packageName": "org.cocos2d.panda-run"
+  },
+  "win32": {},
+  "android-instant": {
+    "REMOTE_SERVER_ROOT": "",
+    "host": "",
+    "packageName": "org.cocos2d.panda-run",
+    "pathPattern": "",
+    "recordPath": "",
+    "scheme": "https",
+    "skipRecord": false
+  },
+  "appBundle": false
 }
