@@ -12,18 +12,18 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        platform_list:[],
-        move_speed:0.1,
+        platform_list: [],
+        move_speed: 0.1,
         platform_prafab: [cc.Prefab],
         platform_layer: cc.Node,
         gold_group_list: [cc.Prefab],
-        maxMoveSpeed:8, //平台最大移动速度
+        maxMoveSpeed: 8, //平台最大移动速度
     },
 
     initPlatforms: function (list) {
         this.platform_list = list;
 
-        list.forEach(function(element) {
+        list.forEach(function (element) {
             element.setAnchorPoint(0, 0);
         }, this);
     },
@@ -34,7 +34,7 @@ cc.Class({
         random_num = Math.floor(random_num);
 
         var platform_temp = cc.instantiate(this.platform_prafab[random_num]);
-        platform_temp.setAnchorPoint(0,0);
+        platform_temp.setAnchorPoint(0, 0);
 
         /**
          *设置坐标 
@@ -54,38 +54,23 @@ cc.Class({
             platform_temp.y = last_platform.y + max_offy;
         }
 
-        
+
         //添加到节点
         this.platform_list.push(platform_temp);
         this.platform_layer.addChild(platform_temp);
 
         //一定的几率平台添加金币
         // if (Math.random() >= 0.5) {
-            var index = Math.random() * 3;
-            index = Math.floor(index);
-            var gold_group = cc.instantiate(this.gold_group_list[index]);
-            var platform_size = platform_temp.getContentSize();
-            gold_group.setPosition(platform_size.width / 2, platform_size.height);
-            platform_temp.addChild(gold_group);
+        var index = Math.random() * 3;
+        index = Math.floor(index);
+        var gold_group = cc.instantiate(this.gold_group_list[index]);
+        var platform_size = platform_temp.getContentSize();
+        gold_group.setPosition(platform_size.width / 2, platform_size.height);
+        platform_temp.addChild(gold_group);
         // }
 
         cc.log("产出一个平台,平台数=", this.platform_list.length);
     },
-
-    // // use this for initialization
-    // onLoad: function () {
-    //     this.schedule(this.onAddSpeed,10);
-    // },
-
-    // onAddSpeed:function(){
-    //     this.move_speed += 0.1;
-    // },
-
-    // onDestroy: function onDisabled() {
-    //      this.unschedule(this.onAddSpeed);
-    // },
-
-    // called every frame, uncomment this function to activate update callback
     update: function (dt) {
         var platform;
         var remove_count = 0;
@@ -97,7 +82,7 @@ cc.Class({
             if (platform.getBoundingBox().xMax > 0) {
                 list_new.push(platform);
             }
-            else{
+            else {
                 platform.removeFromParent();
             }
         }
@@ -118,7 +103,7 @@ cc.Class({
 
         //平台移动速度变更
         if (this.move_speed < this.maxMoveSpeed) {
-            this.move_speed += 0.001; 
+            this.move_speed += 0.001;
         }
     },
 });
