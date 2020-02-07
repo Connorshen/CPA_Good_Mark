@@ -1,15 +1,43 @@
 {
-  "start-scene": "current",
-  "group-list": [
-    "default"
-  ],
   "collision-matrix": [
     [
+      false,
+      false,
+      false,
+      false
+    ],
+    [
+      false,
+      false,
+      true,
+      false
+    ],
+    [
+      false,
+      true,
+      false,
       true
+    ],
+    [
+      false,
+      false,
+      true,
+      false
     ]
   ],
-  "excluded-modules": [],
-  "last-module-event-record-time": 1580989720558,
+  "excluded-modules": [
+    "Geom Utils",
+    "3D",
+    "3D Primitive"
+  ],
+  "group-list": [
+    "default",
+    "platform",
+    "player",
+    "gold"
+  ],
+  "start-scene": "current",
+  "last-module-event-record-time": 0,
   "design-resolution-width": 960,
   "design-resolution-height": 640,
   "fit-width": false,

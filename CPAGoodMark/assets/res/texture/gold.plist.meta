@@ -1,7 +1,7 @@
 {
   "ver": "1.2.4",
-  "uuid": "f78d35c7-fa3d-4f3a-b1e8-758b3410ebcf",
-  "rawTextureUuid": "31bfb702-395a-4356-b88b-efcad7672e26",
+  "uuid": "27822d9a-4ac0-473a-bec2-4bece7eda591",
+  "rawTextureUuid": "c6c7c3f7-8679-4c6a-b42e-dbf55a379e03",
   "size": {
     "width": 128,
     "height": 256
@@ -10,8 +10,8 @@
   "subMetas": {
     "gold0.png": {
       "ver": "1.0.4",
-      "uuid": "b5507394-d6ff-484b-b094-13400810bfb0",
-      "rawTextureUuid": "31bfb702-395a-4356-b88b-efcad7672e26",
+      "uuid": "a050d3fa-d21f-44ff-8354-a14e949eb330",
+      "rawTextureUuid": "c6c7c3f7-8679-4c6a-b42e-dbf55a379e03",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
@@ -32,8 +32,8 @@
     },
     "gold1.png": {
       "ver": "1.0.4",
-      "uuid": "aaf7ce5c-14e6-4a63-9789-7fce9a72128b",
-      "rawTextureUuid": "31bfb702-395a-4356-b88b-efcad7672e26",
+      "uuid": "f65b986d-7d8d-4c03-94aa-f9cbadb63a45",
+      "rawTextureUuid": "c6c7c3f7-8679-4c6a-b42e-dbf55a379e03",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": true,
@@ -54,8 +54,8 @@
     },
     "gold2.png": {
       "ver": "1.0.4",
-      "uuid": "01108499-169e-4893-910e-abf3d6cac2b6",
-      "rawTextureUuid": "31bfb702-395a-4356-b88b-efcad7672e26",
+      "uuid": "c57df66b-fe26-4a8f-b138-8849332b9e70",
+      "rawTextureUuid": "c6c7c3f7-8679-4c6a-b42e-dbf55a379e03",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": true,
@@ -76,8 +76,8 @@
     },
     "gold3.png": {
       "ver": "1.0.4",
-      "uuid": "5de9cc94-b29c-4ed4-91e5-9fe7b3be1ba7",
-      "rawTextureUuid": "31bfb702-395a-4356-b88b-efcad7672e26",
+      "uuid": "c679945f-3485-4da5-afbe-54444c831257",
+      "rawTextureUuid": "c6c7c3f7-8679-4c6a-b42e-dbf55a379e03",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
@@ -98,8 +98,8 @@
     },
     "gold4.png": {
       "ver": "1.0.4",
-      "uuid": "4fc2e15d-6325-42cc-8296-657607f266c0",
-      "rawTextureUuid": "31bfb702-395a-4356-b88b-efcad7672e26",
+      "uuid": "7e03e019-05a1-4b68-b801-d916d1b651f3",
+      "rawTextureUuid": "c6c7c3f7-8679-4c6a-b42e-dbf55a379e03",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": true,
@@ -120,8 +120,8 @@
     },
     "gold5.png": {
       "ver": "1.0.4",
-      "uuid": "b180ebd6-a8d9-414d-baac-3150780e0763",
-      "rawTextureUuid": "31bfb702-395a-4356-b88b-efcad7672e26",
+      "uuid": "4e9836a0-3658-418b-8120-aca02df85026",
+      "rawTextureUuid": "c6c7c3f7-8679-4c6a-b42e-dbf55a379e03",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
@@ -142,8 +142,8 @@
     },
     "gold6.png": {
       "ver": "1.0.4",
-      "uuid": "480d7cff-7943-4118-ad0f-1cf7eb01f845",
-      "rawTextureUuid": "31bfb702-395a-4356-b88b-efcad7672e26",
+      "uuid": "1eb08c5e-79b4-4eec-a7ff-133b113e1327",
+      "rawTextureUuid": "c6c7c3f7-8679-4c6a-b42e-dbf55a379e03",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": true,
@@ -164,8 +164,8 @@
     },
     "gold7.png": {
       "ver": "1.0.4",
-      "uuid": "2b26f704-5b27-408b-884e-23269a77acb9",
-      "rawTextureUuid": "31bfb702-395a-4356-b88b-efcad7672e26",
+      "uuid": "dd64db70-3147-4d16-97aa-21c4ca5d29fa",
+      "rawTextureUuid": "c6c7c3f7-8679-4c6a-b42e-dbf55a379e03",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
@@ -186,8 +186,8 @@
     },
     "gold8.png": {
       "ver": "1.0.4",
-      "uuid": "c2d6549f-1443-4fcc-9683-5c5e03d76ad0",
-      "rawTextureUuid": "31bfb702-395a-4356-b88b-efcad7672e26",
+      "uuid": "49dd51c8-c038-44ea-ab96-48161d463f33",
+      "rawTextureUuid": "c6c7c3f7-8679-4c6a-b42e-dbf55a379e03",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
@@ -208,8 +208,8 @@
     },
     "gold9.png": {
       "ver": "1.0.4",
-      "uuid": "15221fa7-fa0d-4f86-a6bc-71d9f5ba01aa",
-      "rawTextureUuid": "31bfb702-395a-4356-b88b-efcad7672e26",
+      "uuid": "bced28c0-6603-4a1c-82a2-bed07b228279",
+      "rawTextureUuid": "c6c7c3f7-8679-4c6a-b42e-dbf55a379e03",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": true,
