@@ -16,6 +16,14 @@ cc.Class({
             default: null,
             type: cc.Prefab,
         },
+        infoLayer: {
+            default: null,
+            type: cc.Prefab,
+        },
+        bgmLayer: {
+            default: null,
+            type: cc.Prefab,
+        },
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -33,10 +41,16 @@ cc.Class({
     courseBtnClicked() {
         var scene = cc.director.getScene();
         var node = cc.instantiate(this.courseLayer);
-
         node.parent = this.node;
     },
     infoBtnClicked() {
-
+        var scene = cc.director.getScene();
+        var node = cc.instantiate(this.infoLayer);
+        node.parent = this.node;
+    },
+    bgmBtnClicked() {
+        var scene = cc.director.getScene();
+        var node = cc.instantiate(this.bgmLayer);
+        node.parent = this.node;
     },
 });
