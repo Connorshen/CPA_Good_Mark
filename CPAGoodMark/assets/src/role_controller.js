@@ -34,7 +34,7 @@ cc.Class({
         this.player = this.node.getComponent(cc.Animation);
 
         //UI组件
-        this.uiLayerComonent = this.uiLayer.getComponent("ui_layer");
+        this.uiLayerComonent = this.uiLayer.getComponent("gold_bar");
 
        cc.eventManager.addListener({
             event: cc.EventListener.KEYBOARD,
