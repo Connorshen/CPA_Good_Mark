@@ -22,7 +22,7 @@ cc.Class({
     onLoad: function () {
         var platform_generator_node = cc.find("platform-generator")
         this.platform_generator = platform_generator_node.getComponent("platform-generator");
-        this.platform_generator.initPlatforms([this.platform_default_0, this.platform_default_1]);
+        this.platform_generator.initPlatforms([this.platform_default_1, this.platform_default_0]);
     },
 
     // called every frame, uncomment this function to activate update callback

@@ -2,41 +2,39 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        platform_list:[],
-        move_speed:0.1,
+        platform_list: [],
+        move_speed: 0.1,
         platform_prafab: [cc.Prefab],
         platform_layer: cc.Node,
         gold_group_list: [cc.Prefab],
-        maxMoveSpeed:8, //平台最大移动速度
+        maxMoveSpeed: 8, //平台最大移动速度
     },
 
     initPlatforms: function (list) {
         this.platform_list = list;
 
-        list.forEach(function(element) {
+        list.forEach(function (element) {
             element.setAnchorPoint(0, 0);
         }, this);
     },
 
-    generate: function (last_platform) {
+    generate: function (last_platform, right_x) {
         //随机N种平台
         var random_num = Math.random() * 4;
         random_num = Math.floor(random_num);
 
         var platform_temp = cc.instantiate(this.platform_prafab[random_num]);
-        platform_temp.setAnchorPoint(0,0);
+        platform_temp.setAnchorPoint(0, 0);
 
         /**
          *设置坐标 
          */
 
         //x
-        var layer_size = this.platform_layer.getContentSize();
-        platform_temp.x = layer_size.width;
+        platform_temp.x = right_x + 100 + Math.random() * 50;
 
         //随机Y值(不能太高，所以-100)
-        platform_temp.y = Math.random() * (layer_size.height - 100);
-        cc.log(platform_temp.y);
+        platform_temp.y = Math.random() * (cc.winSize.height - 100);
 
         //防止Y对于前面的平台过高，跳不上去
         var max_offy = 100;
@@ -44,20 +42,20 @@ cc.Class({
             platform_temp.y = last_platform.y + max_offy;
         }
 
-        
+
         //添加到节点
         this.platform_list.push(platform_temp);
         this.platform_layer.addChild(platform_temp);
 
         //一定的几率平台添加金币
-        // if (Math.random() >= 0.5) {
+        if (Math.random() >= 0.5) {
             var index = Math.random() * 3;
             index = Math.floor(index);
             var gold_group = cc.instantiate(this.gold_group_list[index]);
             var platform_size = platform_temp.getContentSize();
             gold_group.setPosition(platform_size.width / 2, platform_size.height);
             platform_temp.addChild(gold_group);
-        // }
+        }
 
         cc.log("产出一个平台,平台数=", this.platform_list.length);
     },
@@ -88,7 +86,7 @@ cc.Class({
             if (platform.getBoundingBox().xMax > 0) {
                 list_new.push(platform);
             }
-            else{
+            else {
                 platform.removeFromParent();
             }
         }
@@ -104,12 +102,12 @@ cc.Class({
         var right_x = last_platform_bounding_box.x + last_platform_bounding_box.width;
 
         if (right_x < winSize.width * 0.8) {
-            this.generate(platform)
+            this.generate(platform, right_x)
         }
 
         //平台移动速度变更
         if (this.move_speed < this.maxMoveSpeed) {
-            this.move_speed += 0.001; 
+            this.move_speed += 0.001;
         }
     },
 });

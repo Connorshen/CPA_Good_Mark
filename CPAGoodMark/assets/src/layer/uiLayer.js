@@ -13,7 +13,7 @@ cc.Class({
 
     addGold: function() {
         this.goldNum++;
-        this.gold_label.string = this.goldNum + "";
+        this.gold_label.string = this.goldNum + "万";
     },
 
     // called every frame, uncomment this function to activate update callback
