@@ -12,23 +12,31 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        startBackground: cc.Node,
+        courseLayer: {
+            default: null,
+            type: cc.Prefab,
+        },
     },
 
     // LIFE-CYCLE CALLBACKS:
 
-    onLoad() {
-        this.registerEvent();
-    },
+    // onLoad () {},
 
     start() {
 
     },
-    registerEvent() {
-        this.startBackground.on(cc.Node.EventType.TOUCH_END, this.onEventStart, this);
-    },
 
-    onEventStart() {
-        cc.director.loadScene("ready-scene");
+    // update (dt) {},
+    startBtnClicked() {
+        cc.director.loadScene("game-scene");
+    },
+    courseBtnClicked() {
+        var scene = cc.director.getScene();
+        var node = cc.instantiate(this.courseLayer);
+
+        node.parent = this.node;
+    },
+    infoBtnClicked() {
+
     },
 });

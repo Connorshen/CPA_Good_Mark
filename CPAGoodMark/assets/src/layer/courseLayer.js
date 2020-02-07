@@ -12,7 +12,7 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        startBackground: cc.Node,
+        closeBtn: cc.Node,
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -25,10 +25,10 @@ cc.Class({
 
     },
     registerEvent() {
-        this.startBackground.on(cc.Node.EventType.TOUCH_END, this.onEventStart, this);
+        this.closeBtn.on(cc.Node.EventType.TOUCH_END, this.onEventStart, this);
     },
 
     onEventStart() {
-        cc.director.loadScene("ready-scene");
+        this.node.destroy();
     },
 });
