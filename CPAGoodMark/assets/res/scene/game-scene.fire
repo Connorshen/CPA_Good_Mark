@@ -1118,8 +1118,8 @@
         "__id__": 11
       }
     ],
-    "near_speed": 3,
-    "far_speed": 5,
+    "near_speed": 0.5,
+    "far_speed": 0.2,
     "_id": "a2i89tC6tNfaduBgIpjw2I"
   },
   {
