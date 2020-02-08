@@ -173,7 +173,7 @@ cc.Class({
         if (other.tag == 1) {
             this.collisionGoldEnter(other, self);
         }
-        else {
+        else if (other.tag == 0) {
             this.collisionPlatformEnter(other, self);
         }
     },
@@ -200,13 +200,13 @@ cc.Class({
      */
     onCollisionExit: function (other, self) {
         console.log('on collision exit');
-        if (other.tag != 0) return;
-
-        this.collisionX = 0;
-        this.collisionY = 0;
-        this.jumping = true;
-        this.jumpCount = 1;
-        this.player.play("jump");
+        if (other.tag == 0) {
+            this.collisionX = 0;
+            this.collisionY = 0;
+            this.jumping = true;
+            this.jumpCount = 1;
+            this.player.play("jump");
+        }
     },
 
     // called every frame, uncomment this function to activate update callback
