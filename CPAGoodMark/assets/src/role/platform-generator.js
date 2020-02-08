@@ -48,7 +48,7 @@ cc.Class({
         this.platform_layer.addChild(platform_temp);
 
         //一定的几率平台添加金币
-        if (Math.random() >= 0.8) {
+        if (Math.random() >= 0.2) {
             var index = Math.random() * 3;
             index = Math.floor(index);
             var gold_group = cc.instantiate(this.gold_group_list[index]);

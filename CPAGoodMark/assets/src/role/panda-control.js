@@ -16,6 +16,7 @@ cc.Class({
         drag: 1000,
         prePosition: cc.v2(0, 0), //上一帧的坐标
         player: null, // 动画播放器
+        goldNum: 0,
 
         // //外部组件
         uiLayer: cc.Node,
@@ -122,6 +123,7 @@ cc.Class({
         other.node.removeFromParent();
 
         this.uiLayerComonent.addGold();
+        this.goldNum++;
     },
 
 
@@ -175,7 +177,7 @@ cc.Class({
         }
         else if (other.tag == 0) {
             this.collisionPlatformEnter(other, self);
-        }else if(other.tag==2){
+        } else if (other.tag == 2) {
             this.toOverScene();
         }
     },
@@ -211,7 +213,11 @@ cc.Class({
         }
     },
     toOverScene: function () {
-        cc.director.loadScene("over-scene");
+        if (this.goldNum < 10) {
+            cc.director.loadScene("over-scene");
+        }else if(this.goldNum >= 10){
+            cc.director.loadScene("success-scene");
+        }
     },
     // called every frame, uncomment this function to activate update callback
     update: function (dt) {
