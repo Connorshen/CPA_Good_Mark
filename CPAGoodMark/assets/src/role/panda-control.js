@@ -175,6 +175,8 @@ cc.Class({
         }
         else if (other.tag == 0) {
             this.collisionPlatformEnter(other, self);
+        }else if(other.tag==2){
+            this.toOverScene();
         }
     },
 
@@ -208,7 +210,9 @@ cc.Class({
             this.player.play("jump");
         }
     },
-
+    toOverScene: function () {
+        cc.director.loadScene("over-scene");
+    },
     // called every frame, uncomment this function to activate update callback
     update: function (dt) {
         /**
