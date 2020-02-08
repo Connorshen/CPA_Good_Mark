@@ -1602,7 +1602,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 400,
-      "height": 180.8
+      "height": 260.8
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1652,8 +1652,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "游戏结束\n小仙女没有到百万年薪",
-    "_N$string": "游戏结束\n小仙女没有到百万年薪",
+    "_string": "游戏结束\n收集的金币小于100个\n小仙女没有到百万年薪",
+    "_N$string": "游戏结束\n收集的金币小于100个\n小仙女没有到百万年薪",
     "_fontSize": 40,
     "_lineHeight": 80,
     "_enableWrapText": true,
