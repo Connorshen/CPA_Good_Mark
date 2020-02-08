@@ -224,6 +224,9 @@ cc.Class({
         /**
          * Y轴变化
          *  */
+        if (this.goldNum>=100){
+            this.toOverScene();
+        }
         if (this.collisionY === 0) //没任何碰撞，计算重力
         {
             this.speed.y += this.gravity * dt;
