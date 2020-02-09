@@ -213,9 +213,9 @@ cc.Class({
         }
     },
     toOverScene: function () {
-        if (this.goldNum < 10) {
+        if (this.goldNum < 100) {
             cc.director.loadScene("over-scene");
-        }else if(this.goldNum >= 10){
+        }else if(this.goldNum >= 100){
             cc.director.loadScene("success-scene");
         }
     },

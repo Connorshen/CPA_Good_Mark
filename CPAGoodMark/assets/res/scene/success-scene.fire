@@ -1299,7 +1299,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        1071.552,
+        1120.407,
         421.781,
         0,
         0,
@@ -1601,7 +1601,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 400,
+      "width": 480,
       "height": 260.8
     },
     "_anchorPoint": {
@@ -1652,8 +1652,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "游戏结束\n收集的金币大于100个\n小仙女到达了百万年薪",
-    "_N$string": "游戏结束\n收集的金币大于100个\n小仙女到达了百万年薪",
+    "_string": "游戏结束\n收集的金币大于100个\n小仙女获得了百万年薪成就",
+    "_N$string": "游戏结束\n收集的金币大于100个\n小仙女获得了百万年薪成就",
     "_fontSize": 40,
     "_lineHeight": 80,
     "_enableWrapText": true,
